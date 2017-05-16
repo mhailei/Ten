@@ -2,12 +2,18 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.mhailei.ten.MainActivity">
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
     <RadioGroup
+        android:id="@+id/rg_bottom"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_alignParentBottom="true"
@@ -15,39 +21,49 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:paddingTop="8dp"
-            android:gravity="center"
+            android:id="@+id/rb_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:drawableTop="@drawable/home_critic_selector"/>
-        <RadioButton
-            android:paddingTop="8dp"
+            android:checked="true"
+            android:drawableTop="@drawable/home_critic_selector"
             android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/home_novel_selector"/>
-        <RadioButton
             android:paddingTop="8dp"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/home_diagram_selector"/>
-        <RadioButton
-            android:paddingTop="8dp"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/home_personal_selector"/>
+            android:tag="0"/>
 
+        <RadioButton
+            android:id="@+id/rb_novel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/home_novel_selector"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:tag="1"/>
 
+        <RadioButton
+            android:id="@+id/rb_diagram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/home_diagram_selector"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:tag="2"/>
+
+        <RadioButton
+            android:id="@+id/rb_personal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/home_personal_selector"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:tag="3"/>
     </RadioGroup>
 
 </RelativeLayout>
