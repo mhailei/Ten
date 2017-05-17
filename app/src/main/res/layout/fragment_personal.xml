@@ -29,7 +29,6 @@
             android:text="点击用QQ登陆"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"/>
-
     </FrameLayout>
 
     <RelativeLayout

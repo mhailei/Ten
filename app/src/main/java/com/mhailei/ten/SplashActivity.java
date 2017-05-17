@@ -48,6 +48,8 @@ public class SplashActivity extends AppCompatActivity implements Animation.Anima
 
         startActivity(new Intent(SplashActivity.this,MainActivity.class));
 
+        finish();
+
     }
 
     @Override

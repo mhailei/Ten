@@ -2,14 +2,13 @@ package com.mhailei.ten;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.mhailei.ten.fragment.DiagramFragment;
-import com.mhailei.ten.fragment.HomeFragment;
+import com.mhailei.ten.fragment.CriticFragment;
 import com.mhailei.ten.fragment.NovelFragment;
 import com.mhailei.ten.fragment.PersonalFragment;
 
@@ -19,9 +18,9 @@ public class MainActivity extends BaseActivity implements  RadioGroup.OnCheckedC
 
 
     private RadioGroup mRadioGroup;
-    private ArrayList<Fragment> frags = new ArrayList<>();
+    private ArrayList<android.support.v4.app.Fragment> frags = new ArrayList<>();
     private FragmentManager manager;
-    private Fragment lastFragment;
+    private android.support.v4.app.Fragment lastFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,7 @@ public class MainActivity extends BaseActivity implements  RadioGroup.OnCheckedC
     }
 
     private void initFragments() {
-        frags.add(new HomeFragment());
+        frags.add(new CriticFragment());
         frags.add(new NovelFragment());
         frags.add(new DiagramFragment());
         frags.add(new PersonalFragment());
