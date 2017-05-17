@@ -4,15 +4,19 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
-import com.mhailei.ten.fragment.DiagramFragment;
 import com.mhailei.ten.fragment.CriticFragment;
+import com.mhailei.ten.fragment.DiagramFragment;
 import com.mhailei.ten.fragment.NovelFragment;
 import com.mhailei.ten.fragment.PersonalFragment;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends BaseActivity implements  RadioGroup.OnCheckedChangeListener {
 
@@ -21,6 +25,10 @@ public class MainActivity extends BaseActivity implements  RadioGroup.OnCheckedC
     private ArrayList<android.support.v4.app.Fragment> frags = new ArrayList<>();
     private FragmentManager manager;
     private android.support.v4.app.Fragment lastFragment;
+    /**
+     * 是否退出
+     */
+    private boolean isExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,5 +73,25 @@ public class MainActivity extends BaseActivity implements  RadioGroup.OnCheckedC
         manager.beginTransaction().hide(lastFragment).commit();
 
         lastFragment = frags.get(tag);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (!isExit) {
+                Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
+                isExit = true;
+
+                new Timer().schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        isExit = false;
+                    }
+                }, 3 * 1000);
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

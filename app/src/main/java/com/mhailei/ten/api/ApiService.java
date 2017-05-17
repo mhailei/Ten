@@ -4,6 +4,8 @@ import com.mhailei.ten.bean.CriticBean;
 import com.mhailei.ten.bean.CriticListBean;
 import com.mhailei.ten.bean.DiagramBean;
 import com.mhailei.ten.bean.DiagramListBean;
+import com.mhailei.ten.bean.NovelBean;
+import com.mhailei.ten.bean.NovelListBean;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -27,4 +29,9 @@ public interface ApiService {
     @GET("/api/Critic/GetCriticContent")
     Call<CriticBean> getCriticBean(@Query("id") String id);
 
+    @GET("/api/Novel/GetNovelList")
+    Call<NovelListBean> getNovelList();
+
+    @GET("/api/Novel/GetNovelContent")
+    Call<NovelBean> getNovelBean(@Query("id") String id);
 }

@@ -89,7 +89,7 @@ public class CriticContentFragment extends BaseFragment {
 
                 title.setText(mBean.getTitle());
                 author.setText(mBean.getAuthor());
-                //times.setText(mBean.getTimes());
+                times.setText(mBean.getTimes()+"");
                 text1.setText(mBean.getText1());
                 text2.setText(mBean.getText2());
                 text3.setText(mBean.getText3());
@@ -105,13 +105,5 @@ public class CriticContentFragment extends BaseFragment {
 
             }
         });
-
-        setupView();
-
-    }
-
-    private void setupView() {
-
-
     }
 }
